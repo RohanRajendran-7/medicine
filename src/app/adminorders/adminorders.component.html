@@ -1,0 +1,57 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Admin Dashboard </div>
+      <div class="list-group list-group-flush">
+        <a href="admin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Dashboard</p></a>
+        <a href="admin/medicines" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Medicines</p></a>
+        <a href="admin/categories" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Categories</p></a>
+        <a href="admin/orders" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Orders</p></a> 
+<a href="admin/pin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Pincode</p></a>
+    
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+      <div class="container-fluid">
+       <h1>Welcome!</h1>
+       <div class="container content"> <!-- container centers content on large screens -->
+        <div class="row">             <!-- responsive row has 12 columns by default -->
+          <div class="col-md-6" style="border: 2px; border-style: dotted;">   
+              <p>Orders count : {{count}}</p>
+          </div>
+          <div class="col-md-6" style="border: 2px; border-style: dotted;"> 
+            <p>Total Value : {{total}}</p>
+          </div>
+        </div>
+    </div>
+    <br>
+        <table class="table table-success table-hover">
+            <thead>
+                <th>Id</th>
+                <th>Shipped To</th>
+                <th>Value</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orderList">
+                    <td>
+                        {{order.id}}
+                    </td>
+                    <td>
+                        {{order.address}}
+                    </td>
+                    <td>
+                        {{order.value}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+      </div>

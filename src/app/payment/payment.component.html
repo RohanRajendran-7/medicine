@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <h1>Total Amount Payable: &#8377; {{total}}</h1>
+    <p>Type confirm below to Complete Payment </p>
+    <input type="text" id="confirm" [(ngModel)]="confirm">
+    <br>
+    <button style="margin: 5px;" id="success" class="btn btn-success" (click)="pay()" [disabled]="confirm != 'confirm'">Pay now</button>
+</div>

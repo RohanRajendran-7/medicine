@@ -1,0 +1,39 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Admin Dashboard </div>
+      <div class="list-group list-group-flush">
+        <a href="admin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Dashboard</p></a>
+        <a href="admin/medicines" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Medicines</p></a>
+        <a href="admin/categories" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Categories</p></a>
+        <a href="admin/orders" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Orders</p></a> 
+<a href="admin/pin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Pincode</p></a>
+        
+      </div>
+    </div>
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <img class="btn btn-primary" id="menu-toggle" src="https://cdn0.iconfinder.com/data/icons/user-interface-150/24/List_menu_toggle-512.png" alt="" style="width: 50px; height: 50px;">
+          
+
+      
+        </nav>
+
+<button class="btn btn-success" style="margin: 5px;" (click)="add()" >Add new Category</button>
+<div class="container-fluid">
+    <div class="wrapper" *ngIf="categoryToggle == false">
+        <div class="card" style="width: auto;" *ngFor="let category of categoryList">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{category.name}}</h5>
+                <img [src]="category.avatar" class="responsive"  alt="alt">
+                <p class="card-text">Id : {{category.id}}</p>
+                <p class="card-text">Offer : {{category.offer}}%</p>
+                <p class="card-text">Popular : {{category.popular}}</p>
+                <button class="btn btn-danger" style="margin-right: 5px;" (click)="delete(category.id)" >Delete</button>
+                <button class="btn btn-warning" (click)="update()">update</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+

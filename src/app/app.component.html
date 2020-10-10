@@ -1,0 +1,19 @@
+
+
+<div class="header">
+  <a href="#" class="logo"><img src="https://www.vhv.rs/file/max/4/42218_medicare-logo-png.png" alt="title" style="height: 50px; width: 250px;"></a>
+  <div class="header-right">
+    <a class="nav-link" id="medicine" name="medicine" (click)="medicine()">Medicines</a>
+    <a class="nav-link" id="login" name="login" *ngIf="loggedin != true" (click)="login()">Login/Signup</a>
+    <a class="nav-link" *ngIf="loggedin != false" (click)="logout()">Logout</a>
+    <a class="nav-link" id="addCart" name="addCart" (click)="cart()">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRay0SfdAYA00zHxcHegaJME8l_83R5k1u4vQ&usqp=CAU" id="icon" alt="cart">
+      <span class='badge badge-warning' id='lblCartCount'> {{count}} </span>
+    </a>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+

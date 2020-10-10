@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <h1>Create a new question in the given format</h1><br><br>
+
+    <label for="Name">User Name</label>
+    <input class="form-control" name="Name" type="text" [(ngModel)]="user.name" placeholder="Enter user Name"/>
+    <label for="email">email</label>
+    <input class="form-control" name="email" type="email" [(ngModel)]="user.email" placeholder="Enter email"/>
+    <label for="password">password</label>
+    <input class="form-control" name="password" type="text" [(ngModel)]="user.password" placeholder="Enter Password"/>
+    <label for="age">age</label>
+    <input class="form-control" name="age" type="text" [(ngModel)]="user.age" placeholder="Enter age"/>
+    <label for="gender">gender</label>
+    <input class="form-control" name="gender" type="text" [(ngModel)]="user.gender" placeholder="Enter gender"/>
+    <label for="address">address</label>
+    <input class="form-control" name="address" type="text" [(ngModel)]="user.address" placeholder="Enter address"/>
+
+    <button class="btn btn-success" type="button" (click)="signup()">Create Question</button>
+</div>

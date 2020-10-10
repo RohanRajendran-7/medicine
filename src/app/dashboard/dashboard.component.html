@@ -1,0 +1,59 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Admin Dashboard </div>
+      <div class="list-group list-group-flush">
+        <a href="admin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Dashboard</p></a>
+        <a href="admin/medicines" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Medicines</p></a>
+        <a href="admin/categories" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Categories</p></a>
+        <a href="admin/orders" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Orders</p></a> 
+<a href="admin/pin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Pincode</p></a>
+        
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="btn btn-success" (click)="add()" style="margin: 5px; float: right;">Add new Admin</button>
+      </nav>
+      <div class="container-fluid">
+       <h1>Welcome!</h1>
+       <div class="container content"> <!-- container centers content on large screens -->
+        <div class="row">             <!-- responsive row has 12 columns by default -->
+          <div class="col-md-6" style="border: 2px; border-style: dotted;">   
+              <p>Admins count : {{admin}}</p>
+          </div>
+          <div class="col-md-6" style="border: 2px; border-style: dotted;"> 
+            <p>Users count : {{user}}</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+    <!-- /#page-content-wrapper -->
+
+  
+<div class="container-fluid">
+    <div class="wrapper">
+        <div class="card" style="width: auto;" *ngFor="let admin of adminList">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{admin.name}}</h5>
+                <p class="card-text">Id : {{admin.id}}</p>
+                <p class="card-text">Gender : {{admin.gender}}</p>
+                <p class="card-text">Name : {{admin.name}}</p>
+                <p class="card-text">Age :{{admin.age}}</p>
+                <p class="card-text">email: {{admin.email}}</p>
+                <p class="card-text">Password: {{admin.password}}</p>
+                <button class="btn btn-danger" style="margin-right: 5px;" (click)="delete(admin.id)" >Delete</button>
+                <button class="btn btn-warning" (click)="update()">update</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

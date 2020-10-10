@@ -1,0 +1,46 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Admin Dashboard </div>
+      <div class="list-group list-group-flush">
+        <a href="admin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Dashboard</p></a>
+        <a href="admin/medicines" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Medicines</p></a>
+        <a href="admin/categories" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Categories</p></a>
+        <a href="admin/orders" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Orders</p></a> 
+<a href="admin/pin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Pincode</p></a>
+       
+      </div>
+    </div>
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <img class="btn btn-primary" id="menu-toggle" src="https://cdn0.iconfinder.com/data/icons/user-interface-150/24/List_menu_toggle-512.png" alt="" style="width: 50px; height: 50px;">
+          
+
+      
+        </nav>
+<div class="container-fluid">
+    <h1>Update category Information</h1><br><br>
+    <label for="id">id</label><br>
+    <select id="filter" class="form-control" name="filter" style="float: left; width: 25%; " [(ngModel)]="id">
+        <option>Select One</option>
+        <option style="width: 50%;" *ngFor = "let category of categoryList">
+            {{category.id}}
+        </option>
+    </select>
+    <br><br>
+    <label for="name">category name</label>
+    <input style="width: 75%;" class="form-control" name="name" type="text" [(ngModel)]="category.name" placeholder="Enter Category Name"/>
+    <label for="description">Avatar</label>
+    <input style="width: 75%;" class="form-control" name="description" type="textarea" [(ngModel)]="category.avatar" placeholder="Enter avatar url"/>
+    <label for="category">Popular</label>
+    <select id="category" class="form-control" name="category" style="float: left;" [(ngModel)]="category.popular">
+        <option>true </option>
+        <option>false</option>
+    </select>
+
+    <br>
+    <label for="offer">Offer</label>
+    <input class="form-control" name="offer" type="text" [(ngModel)]="category.offer" placeholder="Enter Offer value"/>
+    <br>
+    <button type="button" class="btn btn-success" (click)="updateCategory()">Update category</button>
+</div>

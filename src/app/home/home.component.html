@@ -1,0 +1,103 @@
+<div class="container-fluid">
+    <h3>Deliver to: check pincode</h3>
+    <span style="margin: 10px;">Select your location: </span>
+    <input type="text" [(ngModel)]="pin" id="pin" placeholder="enter pincode" style="width: 50%; margin: 5px;">
+    <input type="button" class="btn btn-warning" id="check" (click)="check()" value="Check">
+    <p *ngIf="toggle==false" style="color: tomato;">Sorry!! Not deliverable yet!</p>
+    <p *ngIf="toggle==true" style="color: cornflowerblue;">Hurray!! We deliver to you!</p>
+    <h1 style="margin: 10px;">Popular Categories</h1>
+    <br><br>
+    <div class="row">
+        <div *ngFor= "let category of categoryList">
+        <div class="col-sm" *ngIf = 'category.popular == true' >
+            <div class="card" style="width:400px">
+                <sup> <span style="background-color: tomato; margin-bottom: 5px;"> Flat {{category.offer}} % off </span> </sup>
+                <img class="card-img-top" [src]="category.avatar" class="responsive" alt="img">
+                <div class="card-body">
+                <h5>{{category.name}}</h5>
+                <button class="btn btn-secondary" (click)="medicine()" >Order Now</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <br><br>
+    
+    <div class="row">
+        <div class="col-sm">
+            <div style="height: 350px;">
+                <img class="card-img-top" style="height: 150px; width: 250px; align-items: center;" [src]="'https://pm1.narvii.com/7333/e4964c8ab0c43ef5af82fdfb198f09d5c04701b0r1-590-590v2_hq.jpg'" alt="img">
+                <div class="card-body">
+                    <h5>Countless Familes Served</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div style="height: 350px;">
+                <img class="card-img-top" style="height: 150px; width: 250px; align-items: center;" [src]="'https://ak.picdn.net/shutterstock/videos/17208073/thumb/12.jpg'" alt="img">
+                <div class="card-body">
+                    <h5>Over 30,000 orders delivered</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div style="height: 350px;">
+                <img class="card-img-top" style="height: 150px; width: 250px; align-items: center;" [src]="'https://ak.picdn.net/shutterstock/videos/15397081/thumb/1.jpg'" alt="img">
+                <div class="card-body">
+                    <h5>Over 22,000 pincodes deliverable</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div style="height: 350px;">
+                <img class="card-img-top" style="height: 150px; width: 250px; align-items: center;" [src]="'https://img.youtube.com/vi/vQR9OvgFhb0/0.jpg'" alt="img">
+                <div class="card-body">
+                    <h5>Hundreds of medicines available*</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h1>We've got India Covered!</h1>
+    <span>
+        We now deliver medicines in 1000+ cities and towns across 22000+ pin codes. We thereby cover every nook and corner of the country! The major cities that we deliver medicines include Mumbai, Kolkata, Delhi, Bengaluru, Ahmedabad, Hyderabad, Chennai, Thane, Howrah, Pune, Gurgaon, Navi Mumbai, Jaipur, Noida, Lucknow, Ghaziabad & Vadodara.
+    </span>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <div style="height: 250px;">
+                <img class="card-img-top" [src]="'https://5.imimg.com/data5/XX/UI/MY-55992720/all-food-businesses-inlcuding-home-based-food-startups-2c-grocery-store-2c-fast-food-joints-2c-restaurants-500x500.jpg'" style="height: 150px; width: 150px; align-items: center;" alt="img">
+                <div class="card-body">
+                    <h5>Over 30,000 orders safely delivered</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div style="height: 250px;">
+                <img class="card-img-top" style="height: 150px; width: 150px; align-items: center;" [src]="'https://cdn1.vectorstock.com/i/1000x1000/17/05/package-logistic-logo-icon-design-vector-22461705.jpg'" alt="img">
+                <div class="card-body">
+                    <h5>Secure packaging</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div style="height: 250px;">
+                <img class="card-img-top" style="height: 150px; width: 150px; align-items: center;" [src]="'https://sc01.alicdn.com/kf/HTB1r1_YXpzsK1Rjy1Xbq6xOaFXak.jpg'" alt="img">
+                <div class="card-body">
+                    <h5>Stored Safely</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div style="height: 250px;">
+                <img class="card-img-top" style="height: 150px; width: 150px; align-items: center;" [src]="'https://previews.123rf.com/images/ionutparvu/ionutparvu1801/ionutparvu180108805/93304691-black-round-stamp-with-quality-assured-text-illustration.jpg'" alt="img">
+                <div class="card-body">
+                    <h5>Quality Assured</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+</div>
+

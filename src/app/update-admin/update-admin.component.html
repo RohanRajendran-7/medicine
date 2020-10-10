@@ -1,0 +1,46 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Admin Dashboard </div>
+      <div class="list-group list-group-flush">
+        <a href="admin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Dashboard</p></a>
+        <a href="admin/medicines" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Medicines</p></a>
+        <a href="admin/categories" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Categories</p></a>
+        <a href="admin/orders" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Orders</p></a> 
+<a href="admin/pin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Pincode</p></a>
+        
+      </div>
+    </div>
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <img class="btn btn-primary" id="menu-toggle" src="https://cdn0.iconfinder.com/data/icons/user-interface-150/24/List_menu_toggle-512.png" alt="" style="width: 50px; height: 50px;">
+          
+
+      
+        </nav>
+    <div class="container-fluid">
+        <h1>Add Admin</h1><br><br>
+
+        <label for="id">Id</label>
+        <select id="id" class="form-control" name="id" [(ngModel)]="id">
+            <option>Select One</option>
+            <option *ngFor = "let admin of adminList">
+                {{admin.id}}
+            </option>
+        </select>
+        <label for="admin">Name</label>
+        <input class="form-control" name="admin" type="text" [(ngModel)]="admin.name" placeholder="Enter Admin Name"/>
+        <label for="email">Email</label>
+        <input class="form-control" name="email" type="textarea" [(ngModel)]="admin.email" placeholder="Enter Email"/>
+        <label for="password">Password</label>
+        <input class="form-control" name="password" type="textarea" [(ngModel)]="admin.password" placeholder="Enter Password"/>
+        <label for="age">Age</label>
+        <input class="form-control" name="age" type="textarea" [(ngModel)]="admin.age" placeholder="Enter age"/>
+        <br>
+        <label for="gender">Gender</label>
+        <input class="form-control" name="gender" type="text" [(ngModel)]="admin.gender" placeholder="Enter gender"/>
+    
+        <button type="button" class="btn btn-success" style="margin: 5px;" (click)="updateAdmin()">Create admin</button>
+    </div>
+    </div>  
+</div>

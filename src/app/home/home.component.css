@@ -1,0 +1,14 @@
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    align-self: start;
+  }
+.response{
+    width: 75%;
+    max-width: 400px;
+    height: 50%;
+}
+body{
+    background-color: gray;
+}

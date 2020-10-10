@@ -1,0 +1,51 @@
+
+
+<h1>Order Summary</h1>
+<h2>{{ today | date : 'EEEE, MMMM d, h:mm' }} {{ today | date : 'a' | lowercase }}</h2>
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-8">
+    
+    <button class="btn btn-dark" id="loginSignup" *ngIf = "loggedin != true" style="float: right; margin: 5px;" title="login to place order" (click)="login()"> Login/SignUp</button>
+<table class="table table-light table-bordered table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of cartList">
+            <td>{{a.id}}</td>
+            <td>{{a.name}}</td>
+            <td>{{a.quantity}}</td>
+            <td>{{a.price}}</td>
+            <td>{{a.total}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="col-6 col-md-4">
+<p>Cart Value <span style="font-weight: bolder;">&#8377;{{total}}</span> &nbsp; <s style="font-size: small; color: red;">&#8377;{{discount}}</s></p>
+<br>
+<div class="wrapper">
+    <div class="card" style="width: auto;">
+        <div class="card-body text-center">
+            <h5 class="card-title">Total savings on this order</h5>
+            <p class="card-text" style="font-weight: bolder;">&#8377;{{discount - total}}</p>
+        </div>
+    </div>
+</div>
+<p>Deliver to </p>
+<textarea name="address" id="address" [(ngModel)]="address" cols="35" rows="5"></textarea>
+<br><br>
+<p>Delivering to: </p>
+<textarea name="final" id="final" disabled value="{{address}}" cols="35" rows="5"></textarea>
+<br>
+<button class="btn btn-success" id="place" *ngIf = "loggedin != false" style="margin: 5px;"(click)="pay()" >Place Order</button>
+</div>
+</div>
+

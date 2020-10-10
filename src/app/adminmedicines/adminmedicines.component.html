@@ -1,0 +1,82 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Admin Dashboard </div>
+      <div class="list-group list-group-flush">
+        <a href="admin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Dashboard</p></a>
+        <a href="admin/medicines" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Medicines</p></a>
+        <a href="admin/categories" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Categories</p></a>
+        <a href="admin/orders" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Orders</p></a> 
+<a href="admin/pin" class="list-group-item list-group-item-action bg-dark"><p style="color: white;">Pincode</p></a>
+    
+      </div>
+    </div>
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <img class="btn btn-primary" id="menu-toggle" src="https://cdn0.iconfinder.com/data/icons/user-interface-150/24/List_menu_toggle-512.png" alt="" style="width: 50px; height: 50px;">
+          
+
+      
+        </nav>
+    <div class="container-fluid">
+    <label for="filter">Filter By Category</label>
+    <div class="container-fluid">
+    <select id="filter" class="form-control" name="filter" style="float: left; width: 25%; " [(ngModel)]="category">
+        <option>Select one </option>
+        <option *ngFor="let category of categoryList">{{category.name}}</option>
+    </select>
+    <button class="btn btn-primary" (click)="filter()" style="margin: 5px; display: inline-block;">Filter</button>
+    <div style="float:right">
+        <span style="margin: 5px;">Search By name</span>
+        <input  type="text" name="search" id="search" [(ngModel)]="search">
+        <button class="btn btn-primary" (click)="searchMedicine()" [disabled]="!search " style="margin: 5px; display: inline-block;">Search</button>
+    </div>
+</div>
+<label for="sort">Sort BY</label>
+<div class="container-fluid">
+    <select  id="sort" class="form-control" name="filter" style="margin:5px; float: left; width: 25%; " [(ngModel)]="sort">
+        <option selected>Select one </option>
+        <option>price</option>
+        <option>Name</option>
+        <option></option>
+    </select>
+    <button class="btn btn-primary" (click)="sorted()" style="margin: 5px; display: inline-block;">Sort</button>
+    <button class="btn btn-primary" (click)="reset()" style="margin: 5px; display: inline-block;">Reset</button>
+
+</div>
+<br><br>
+<button class="btn btn-success" (click)="add()" style="margin: 5px; display: inline-block;">Add new Medicine</button>
+<div class="container-fluid">
+    <div class="wrapper" *ngIf="searchToggle != true">
+        <div class="card" style="width: auto;" *ngFor="let medicine of medicineList">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{medicine.med_name}}</h5>
+                <p class="card-text">Id : {{medicine.id}}</p>
+                <p class="card-text">Description : {{medicine.description}}</p>
+                <p class="card-text">Name : {{medicine.med_name}}</p>
+                <p class="card-text">Price :<span style="margin-right: 3px; font-weight: bolder; color: darkred;"> &#8377;{{medicine.price}}</span>  <s style="font-size: small;">&#8377;{{medicine.amount}}</s>  </p>
+                <p class="card-text">Category : {{medicine.category}}</p>
+                <button class="btn btn-danger" style="margin-right: 5px;" (click)="delete(medicine.id)" >Delete</button>
+                <button class="btn btn-warning" (click)="update()">update</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="wrapper">
+        <div class="card" style="width: auto;" *ngIf="searchToggle == true ">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{medicine.med_name}}</h5>
+                <p class="card-text">Id : {{medicine.id}}</p>
+                <p class="card-text">Description : {{medicine.description}}</p>
+                <p class="card-text">Name : {{medicine.med_name}}</p>
+                <p class="card-text">Price :<span style="margin-right: 3px; font-weight: bolder; color: darkred;"> &#8377;{{medicine.price}}</span>  <s style="font-size: small;">&#8377;{{medicine.amount}}</s>  </p>
+                <p class="card-text">Category : {{medicine.category}}</p>
+                <button class="btn btn-danger" style="margin-right: 5px;" (click)="delete(medicine.id)" >Delete</button>
+                <button class="btn btn-warning" (click)="update()">update</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
